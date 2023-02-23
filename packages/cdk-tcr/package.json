@@ -1,5 +1,5 @@
 {
-  "name": "@richicoder1/cdk-tcr",
+  "name": "@richicoder/cdk-tcr",
   "version": "0.1.2",
   "description": "CDK Typesafe Resource Provider",
   "main": "dist/index.js",
@@ -44,5 +44,6 @@
     ],
     "bundle": true,
     "dts": true
-  }
+  },
+  "gitHead": "369c5f0c8face5a56ec8a5b5af988b015e5f9489"
 }
