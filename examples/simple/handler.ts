@@ -1,11 +1,12 @@
-import { provider } from '@richicoder1/cdk-tcr';
+import { provider, cf } from '@richicoder1/cdk-tcr';
 import { z } from 'zod';
 
 export const onEvent = provider()
     .resource('Custom::ExampleResource', {
         schema: z.object({
-            path: z.string(),
-            optionalBool: z.boolean().optional(),
+            path: cf.string,
+            optionalBool: cf.boolean.optional(),
+            literal: cf.literal(false, cf.boolean),
         }),
         async create(properties) {
             // create the thing

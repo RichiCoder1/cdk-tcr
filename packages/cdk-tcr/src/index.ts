@@ -87,3 +87,5 @@ function resource<Schema extends z.Schema>(options: ResourceOptions<Schema>) {
     return response;
   }
 }
+
+export * as cf from "./types";
