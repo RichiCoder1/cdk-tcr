@@ -13,10 +13,10 @@ export const onEvent = provider()
                 physicalResourceId: 'some-id',
             };
         },
-        async update(properties, oldProperties) {
+        async update(id, properties, oldProperties) {
             return {};
         },
-        async delete(properties) {
+        async delete(id, properties) {
             return {};
         },
     })
