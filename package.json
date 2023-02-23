@@ -1,0 +1,35 @@
+{
+  "name": "@richicoder1/cdk-tcr",
+  "version": "0.1.0",
+  "description": "CDK Typesafe Resource Provider",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RichiCoder1/cdk-tcr.git"
+  },
+  "keywords": [
+    "cdk",
+    "custom-resource"
+  ],
+  "author": "richicoder1",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RichiCoder1/cdk-tcr/issues"
+  },
+  "homepage": "https://github.com/RichiCoder1/cdk-tcr#readme",
+  "devDependencies": {
+    "aws-cdk-lib": "^2.66.0",
+    "tsup": "^6.6.3"
+  },
+  "dependencies": {
+    "camelcase-keys": "^8.0.2",
+    "zod": "^3.20.6",
+    "zod-validation-error": "^0.3.1"
+  },
+  "peerDependencies": {
+    "aws-cdk-lib": ">= 2.66.0 < 3.0.0"
+  }
+}
