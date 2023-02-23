@@ -1,4 +1,4 @@
-import { provider } from '../src';
+import { provider } from '@richicoder1/cdk-tcr';
 import { z } from 'zod';
 
 export const onEvent = provider()

@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "dependencies": {
+    "@richicoder1/cdk-tcr": "*"
+  }
+}
