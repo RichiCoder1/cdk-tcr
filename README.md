@@ -1,7 +1,12 @@
 # cdk-tcr
 CDK TypeSafe Custom Resource Provider.
 
-Automatically validates incoming properties from as well as providing zod helpers to handle coercing from CloudFormation's string encoding to native types as well as automatically camel casing incoming models for a native typescript feel.
+Provider the following:
+* Validation of incoming properties using the excellent [zod](https://zod.dev/) library.
+* Automatic camel casing of incoming properties for a more Javascript/Typescript feel.
+* Automatic coercion of incoming properties from CloudFormation's stringified values.
+* Constructs for creating provider resources on a stack-singleton and account-wide basis.
+* Base constructs for creating `CustomResource` types with type validation of inputs.
 
 > **Note**
 > This library is intended to only work with Javascript/Typescript providers and constructs.
