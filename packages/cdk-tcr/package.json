@@ -1,6 +1,6 @@
 {
   "name": "@richicoder/cdk-tcr",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "CDK Typesafe Resource Provider",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
