@@ -1,14 +1,15 @@
-import { provider, cf } from '@richicoder1/cdk-tcr';
-import { z } from 'zod';
+import { provider } from '@richicoder1/cdk-tcr/handler';
+import { exampleResourceDef } from '../../shared';
 
 export const onEvent = provider()
-    .resource('Custom::ExampleResource', {
-        schema: z.object({
-            path: cf.string,
-            optionalBool: cf.boolean.optional(),
-            literal: cf.literal(false, cf.boolean),
-        }),
+    .resource(exampleResourceDef, {
         async create(properties) {
+            // string;
+            properties.path;
+            // boolean | undefined;
+            properties.optionalBool;
+            // false;
+            properties.literal;
             // create the thing
             return {
                 physicalResourceId: 'some-id',

@@ -7,6 +7,29 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./provider": {
+      "types": "./dist/provider.d.ts",
+      "import": "./dist/provider.mjs",
+      "require": "./dist/provider.js"
+    },
+    "./customResource": {
+      "types": "./dist/customResource.d.ts",
+      "import": "./dist/customResource.mjs",
+      "require": "./dist/customResource.js"
+    },
+    "./handler": {
+      "types": "./dist/handler.d.ts",
+      "import": "./dist/handler.mjs",
+      "require": "./dist/handler.js"
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "build": "tsup"
   },
@@ -43,9 +66,16 @@
   },
   "tsup": {
     "entry": [
-      "src/index.ts"
+      "src/index.ts",
+      "src/customResource.ts",
+      "src/handler.ts",
+      "src/provider.ts"
     ],
-    "bundle": true,
+    "format": [
+      "cjs",
+      "esm"
+    ],
+    "target": "node16",
     "dts": true
   },
   "gitHead": "30aee8d830fa9d49ef8e8d42f6aa0d4e90e2f0d9"
