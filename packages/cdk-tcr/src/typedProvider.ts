@@ -11,14 +11,36 @@ const PROVIDER_ID_REGEX = /^[a-zA-Z0-9-_]{1,54}$/;
 type EventHandlerProps = Partial<FunctionProps> & { code: FunctionProps['code'] };
 
 type TypedProviderPropsBase<ResourceDef extends ResourceDefinition<any>> = {
+  /** The resource definition */
   resource: ResourceDef;
+  /**
+   * The onEvent handler for the provider.
+   */
   onEvent: Code | EventHandlerProps | IFunction;
+  /**
+   * The isComplete handler for the provider.
+   */
   isComplete?: Code | EventHandlerProps | IFunction;
 };
 
 type TypedProviderPropsAccountWide<ResourceDef extends ResourceDefinition<any>> = TypedProviderPropsBase<ResourceDef> & {
+  /**
+   * Whether or not to register the provider as account-wide and place the service token in the SSM Parameter Store.
+   */
   registerAccountWide: true;
+  /**
+   * The provider ID to use when registering the provider as account-wide. This provider id should be unique.
+   * 
+   * @remarks be careful changing this as it will break downstream consumers of the provider.
+   */
   providerId: string;
+  /**
+   * The prefix to use when registering the provider as account-wide.
+   * 
+   * @default "/cdk-tcr/providers"
+   * @remarks be careful changing this as it will break downstream consumers of the provider.
+   */
+  parameterPrefix?: string;
 }
 
 export type TypedProviderProps<ResourceDef extends ResourceDefinition<any>> = TypedProviderPropsAccountWide<ResourceDef> | TypedProviderPropsBase<ResourceDef>;
@@ -123,6 +145,7 @@ export class TypedProvider<ResourceDef extends ResourceDefinition<any> = Resourc
       new ProviderRegistration(this, `${id}ProviderRegistration`, {
         provider: this.provider,
         providerId: providerId!,
+        parameterPrefix: props.parameterPrefix,
       });
     }
   }
