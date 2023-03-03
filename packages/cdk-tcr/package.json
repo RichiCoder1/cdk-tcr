@@ -31,7 +31,8 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+    "prepublishOnly": "tsup"
   },
   "repository": {
     "type": "git",
